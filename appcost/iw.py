@@ -57,10 +57,10 @@ def split_by_desc(data):
             cur_item = df.drop(
                 df[df[pclassdesc] != item].index, inplace=False)
             fn = clean_filename(item)
-            cur_item.to_excel(splitdir + "/" + fn + ".xlsx")
+            cur_item.to_excel(splitdir + "/" + fn + ".xlsx",index=False)
 
 
 iwdata = load_data(iwdir)
 
-# add_app_cost(iwdata)
+add_app_cost(iwdata)
 split_by_desc(iwdata)
